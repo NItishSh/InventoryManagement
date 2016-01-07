@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="InventoryDB">
+  <DataContextMoniker Name="/InventoryDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="0f414ed4-5023-41a2-8276-fb83437c2b63" absoluteBounds="0.75, 1.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/InventoryDBDataContext/Inventory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8b2bb0a7-896f-4e53-b1be-6d4dac42e45a" absoluteBounds="0.765, 1.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3f38c771-d302-49b8-aee3-58b1918840fa" absoluteBounds="4, 2, 2, 1.9631982421875">
+      <DataClassMoniker Name="/InventoryDBDataContext/Transaction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bcc465a6-7cab-46ca-9b61-bd21da44f890" absoluteBounds="4.015, 2.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.98159912109375); (4 : 2.98159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/InventoryDBDataContext/Inventory/Inventory_Transaction" />
+      <nodes>
+        <classShapeMoniker Id="0f414ed4-5023-41a2-8276-fb83437c2b63" />
+        <classShapeMoniker Id="3f38c771-d302-49b8-aee3-58b1918840fa" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
