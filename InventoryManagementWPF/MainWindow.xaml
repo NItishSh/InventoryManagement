@@ -63,7 +63,7 @@
                         <Button x:Name="btnSave" Content="Save" Width="100" Height="30" Margin="0,0,10,0" Click="btnSave_Click"/>
                         <Button x:Name="btnCancel" Content="Cancel" Width="100" Height="30" Margin="10,0,0,0" Click="btnCancel_Click"/>
                     </StackPanel>
-                    <ListView x:Name="lvFullinventory" Grid.Column="2" Grid.Row="0" Grid.RowSpan="7" Margin="10,0,0,0" >
+                    <ListView x:Name="lvFullinventory" Grid.Column="2" Grid.Row="0" Grid.RowSpan="9" Margin="10,0,0,0" >
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding Name}" />
@@ -101,6 +101,29 @@
                                 </GridView>
                             </ListView.View>
                         </ListView>
+                        <ListBox x:Name="lbmedicineName" HorizontalAlignment="Left">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Button Content="Add to bill" Tag="{Binding Id}" Click="Button_Click" />
+                                        <TextBlock Grid.Column="1" Text="{Binding Name}"/>
+                                        <TextBlock Grid.Column="2" Text="{Binding Manufacturer}"/>
+                                        <TextBlock Grid.Column="3" Text="{Binding ExpiryDate}"/>
+                                        <TextBlock Grid.Column="4" Text="{Binding MRP}"/>
+                                        <TextBlock Grid.Column="5" Text="{Binding Quantity}"/>
+
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
                     </StackPanel>
                 </Grid>
             </TabItem>

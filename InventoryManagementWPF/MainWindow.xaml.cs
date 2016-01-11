@@ -29,6 +29,7 @@ namespace InventoryManagementWPF
             txtMRP.TextChanged += TxtMRP_TextChanged;
             txtCostPrice.TextChanged += TxtCostPrice_TextChanged;
             txtQuantity.TextChanged += TxtQuantity_TextChanged;
+            
             LoadlvFullinventory();
         }
 
@@ -163,8 +164,16 @@ namespace InventoryManagementWPF
             if(!string.IsNullOrEmpty(txtMedicineName.Text))
             {
                 InventoryManager manager = new InventoryManager();
-                lvMedicines.ItemsSource = manager.GetAllItemsByName(txtMedicineName.Text);                            
+                lvMedicines.ItemsSource = manager.GetAllItemsByName(txtMedicineName.Text);
+                lbmedicineName.ItemsSource = manager.GetAllItemsByName(txtMedicineName.Text);                
             }               
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var itemId = ((Button)sender).Tag;
+            //get item by above Id then add it to bill
+
         }
     }
 }
