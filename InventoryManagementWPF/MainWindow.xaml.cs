@@ -159,21 +159,27 @@ namespace InventoryManagementWPF
         }
         private void txtMedicineName_TextChanged(object sender, TextChangedEventArgs e)
         {
+            //we can skip the item load if the character count is in multiplles of three
             //use new thread to load the data and try to implement loading progress.
             //call method in inventory manager to get Items by name
             if(!string.IsNullOrEmpty(txtMedicineName.Text))
             {
                 InventoryManager manager = new InventoryManager();
-                lvMedicines.ItemsSource = manager.GetAllItemsByName(txtMedicineName.Text);
-                lbmedicineName.ItemsSource = manager.GetAllItemsByName(txtMedicineName.Text);                
+                lvMedicines.ItemsSource = manager.GetAllItemsByName(txtMedicineName.Text);                              
             }               
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var itemId = ((Button)sender).Tag;
+            int itemId = Convert.ToInt32(((Button)sender).Tag);
             //get item by above Id then add it to bill
+            InventoryManager manager = new InventoryManager();
+            Inventory item = manager.GetItem(itemId);
+            if(item != null)
+            {
+                //Add it to bill(trnsaction table)
 
-        }
+            }
+        }        
     }
 }
